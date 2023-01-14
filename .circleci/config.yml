@@ -79,6 +79,11 @@ jobs:
             npm run api:install
             npm run api:build
             npm run api:deploy
+      - run:
+          name: Deploying var
+          working_directory: ../udagram/udagram-api/
+          command: |
+                    eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
            # eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
            # npm run api:setvar
 workflows:
