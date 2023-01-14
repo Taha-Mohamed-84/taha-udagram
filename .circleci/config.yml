@@ -79,7 +79,7 @@ jobs:
             npm run api:install
             npm run api:build
             npm run api:deploy
-            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
+           # eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
            # npm run api:setvar
 workflows:
   udagram:
