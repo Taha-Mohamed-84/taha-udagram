@@ -10,7 +10,7 @@
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     "deploy3": "eb deploy udagramapp-env",
-    "deploy": "eb init && eb list && eb use udagramapp-env && eb deploy",
+    "deploy": "eb init udagramapp&& eb list && eb use udagramapp-env && eb deploy",
    "deploy2": "npm run build && eb list && eb use udagram-api-dev && eb deploy",
     "build2": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && bestzip Archive.zip *&& cd ..",
