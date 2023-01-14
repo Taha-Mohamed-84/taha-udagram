@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   # orgs contain basc recipes and reproducible actions (install node, aws, etc.)
   node: circleci/node@5.0.2
-  angular-npm-orb: code0987/angular-npm-orb@0.1.0
+  #angular-npm-orb: code0987/angular-npm-orb@0.1.0
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
   # different jobs are calles later in the workflows sections
@@ -16,8 +16,8 @@ jobs:
       # install node and checkout code ---
       - node/install:
           node-version: '14.15'     
-      - angular-npm-orb/install:
-          angular-npm-orb-version: '8.2'       
+      #- angular-npm-orb/install:
+       #   angular-npm-orb-version: '8.2'       
       - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
@@ -59,6 +59,7 @@ jobs:
     steps:
       - node/install:
           node-version: '14.15' 
+      - npm install angular-cli@latest -g
       - eb/setup
       - aws-cli/setup
       - checkout
