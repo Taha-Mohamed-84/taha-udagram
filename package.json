@@ -12,6 +12,7 @@
         "api:build": "cd udagram/udagram-api && npm run build",
         "api:start": "cd udagram/udagram-api && npm run dev",
         "api:deploy": "cd udagram/udagram-api && npm run deploy",
+        "api:setvar": "cd udagram/udagram-api && npm run deploy",
         "rungit": "git status && git add .&& git commit -m \"deploy api\" && git push",
         "deploy": "npm run api:deploy && npm run frontend:deploy"
 
