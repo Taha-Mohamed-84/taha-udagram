@@ -15,7 +15,9 @@ jobs:
     steps:
       # install node and checkout code ---
       - node/install:
-          node-version: '14.15'         
+          node-version: '14.15'     
+      - angular-npm-orb/install:
+          angular-npm-orb-version: '8.2'       
       - checkout
       # Use root level package.json to install dependencies in the frontend app
       - run:
