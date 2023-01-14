@@ -59,7 +59,7 @@ jobs:
     steps:
       - node/install:
           node-version: '14.15' 
-      - npm install angular-cli@latest -g
+      #- npm install angular-cli@latest -g
       - eb/setup
       - aws-cli/setup
       - checkout
@@ -68,6 +68,8 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
+            npm run frontend:install
+            npm run frontend:build
             npm run frontend:deploy
       - run:
           name: api Deploy
